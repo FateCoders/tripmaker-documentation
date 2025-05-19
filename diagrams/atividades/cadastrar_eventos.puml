@@ -1,0 +1,36 @@
+@startuml
+skinparam monochrome true
+
+|Usuário (Publicador Privado ou Prefeitura)|
+:Entrar na Plataforma;
+:Autenticar e Autorizar;
+:Acessar Formulário de Cadastro de Evento;
+:Definir Data e Hora do Evento;
+:Adicionar Detalhes do Evento (Nome, Localização, Descrição, Imagens);
+:Selecionar Tipo de Evento (Público ou Privado);
+if (Campos Preenchidos Corretamente?) then (Sim)
+    :Enviar Evento para Aprovação;
+    if (Aprovado?) then (Sim)
+        :Evento Publicado;
+        :Notificar Usuário;
+    else (Não)
+        :Receber Feedback;
+        :Editar Detalhes do Evento;
+        :Reenviar Evento;
+    endif
+else (Não)
+    :Exibir Mensagem de Erro (Campos Obrigatórios);
+    :Corrigir Dados;
+endif
+
+|Administrador|
+:Revisar Evento Enviado;
+if (Válido?) then (Sim)
+    :Aprovar Evento;
+    :Notificar Usuário;
+else (Não)
+    :Rejeitar Evento;
+    :Fornecer Feedback (e.g., Duplicatas);
+endif
+
+@enduml

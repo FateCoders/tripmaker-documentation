@@ -1,0 +1,36 @@
+@startuml
+skinparam monochrome true
+
+|Empregador Local|
+:Entrar na Plataforma;
+:Autenticar e Autorizar;
+:Acessar Formulário de Cadastro de Negócio;
+:Selecionar Tipo de Negócio (Pousada, Restaurante, Experiência);
+:Adicionar Localização (Cidade, Endereço);
+:Adicionar Detalhes (Nome, Descrição, Imagens);
+if (Campos Preenchidos Corretamente?) then (Sim)
+    :Enviar Negócio para Aprovação;
+    if (Aprovado?) then (Sim)
+        :Negócio Publicado;
+        :Notificar Empregador;
+    else (Não)
+        :Receber Feedback;
+        :Editar Detalhes do Negócio;
+        :Reenviar Negócio;
+    endif
+else (Não)
+    :Exibir Mensagem de Erro (Campos Obrigatórios);
+    :Corrigir Dados;
+endif
+
+|Administrador|
+:Revisar Negócio Enviado;
+if (Válido?) then (Sim)
+    :Aprovar Negócio;
+    :Notificar Empregador;
+else (Não)
+    :Rejeitar Negócio;
+    :Fornecer Feedback;
+endif
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+skinparam monochrome true
+
+|Administrador|
+:Entrar na Plataforma;
+:Autenticar e Autorizar (RBAC);
+:Acessar Painel de Gerenciamento de Cidades;
+:Visualizar Lista de Cidades/Regiões;
+if (Ação?) then (Adicionar Cidade)
+    :Adicionar Nova Cidade/Região;
+    :Vincular Rotas/Eventos à Cidade;
+else (Editar Cidade)
+    :Atualizar Detalhes da Cidade;
+    :Reatribuir Rotas/Eventos;
+else (Excluir Cidade)
+    :Remover Cidade/Região;
+    :Notificar Usuários Afetados (Opcional);
+endif
+
+@enduml
