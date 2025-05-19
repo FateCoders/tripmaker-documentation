@@ -1,0 +1,19 @@
+startuml
+start
+:Cliente faz login;
+:Escolher produtos;
+:Adicionar ao carrinho;
+if (Deseja finalizar?) then (Sim)
+    :Efetuar pagamento;
+    :Sistema verifica pagamento;
+    if (Pagamento aprovado?) then (Sim)
+        :Gerar pedido;*
+        :Enviar confirmação ao cliente;
+    else (Não)
+        :Notificar erro no pagamento;
+    endif
+else (Não)
+    :Continuar navegando;
+endif
+stop
+@enduml
