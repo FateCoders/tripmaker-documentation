@@ -1,0 +1,107 @@
+@startuml
+
+' Skin parameters for cleaner rendering
+skinparam monochrome true
+skinparam ranksep 60
+skinparam nodesep 40
+skinparam classAttributeIconSize 0
+skinparam padding 2
+
+' Classes
+class Administrador {
+  -id: String
+  -email: String
+  -senha: String
+  -nome: String
+  +gerenciarUsuarios()
+  +validarConteudo()
+  +segmentarPorCidade()
+}
+
+class UsuarioComum {
+  -id: String
+  -email: String
+  -senha: String
+  -nome: String
+  +visualizarEvento()
+}
+
+class PublicadorPrivado {
+  -id: String
+  -nome: String
+  -email: String
+  -senha: String
+  +cadastrarEvento()
+  +cadastrarPontoTuristico()
+}
+
+class EmpregadorLocal {
+  -id: String
+  -nome: String
+  -email: String
+  -senha: String
+  +cadastrarNegocio()
+  +editarNegocio()
+}
+
+class OrganizadorEventos {
+  -id: String
+  -nome: String
+  -email: String
+  -senha: String
+  +publicarEventoMultiCidades()
+}
+
+class Evento {
+  -id: String
+  -nome: String
+  -data: Date
+  -cidade: String
+  -tipo: String
+  +getCalendario()
+}
+
+class PontoTuristico {
+  -id: String
+  -nome: String
+  -localizacao: String
+  -tipo: String
+  +getInformacoes()
+}
+
+class Negocio {
+  -id: String
+  -nome: String
+  -tipo: String
+  -localizacao: String
+  +getDetalhes()
+}
+
+
+class Inscricao {
+  -id: String
+  -usuarioId: String
+  -data: Date
+  +confirmar()
+}
+
+' Relationships with directed arrows
+Administrador -up-> Evento : valida
+Administrador -down-> PontoTuristico : valida
+Administrador -down-> Negocio : valida
+Administrador -down-> UsuarioComum : gerencia
+
+PublicadorPrivado -down-> Evento : cadastra
+PublicadorPrivado -down-> PontoTuristico : cadastra
+
+EmpregadorLocal -up-> Negocio : cadastra
+
+UsuarioComum -down-> Evento : visualiza
+UsuarioComum -down-> Inscricao : realiza
+
+OrganizadorEventos -down-> Evento : publica
+
+Evento -right-> PontoTuristico : associa
+
+
+@enduml
