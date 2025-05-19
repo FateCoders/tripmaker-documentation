@@ -94,6 +94,32 @@ admin --> (Configurar Sistema)
 @enduml
 ```
 
+### 4. Diagrama de Atividade
+Representa o fluxo de trabalho ou processo em um sistema.
+
+**Arquivo**: `diagrams/diagrama_atividade.puml`
+```puml
+@startuml
+start
+:Usuário faz login;
+if (Credenciais válidas?) then (sim)
+  :Sistema autentica usuário;
+  :Usuário solicita relatório;
+  :Sistema consulta banco de dados;
+  if (Dados disponíveis?) then (sim)
+    :Sistema gera relatório;
+    :Exibe relatório ao usuário;
+  else (não)
+    :Exibe mensagem de erro;
+  endif
+else (não)
+  :Exibe erro de login;
+  stop
+endif
+stop
+@enduml
+```
+
 ## Dicas
 
 - **Pré-visualização em Tempo Real**: A extensão atualiza a pré-visualização automaticamente ao editar o arquivo `.puml`.
