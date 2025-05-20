@@ -1,0 +1,48 @@
+@startuml
+start
+
+:Usuário navega para seção de eventos;
+:Usuário aplica filtros (cidade, data, tipo de evento);
+:Sistema exibe lista de eventos disponíveis;
+:Usuário seleciona um evento;
+:Sistema exibe detalhes do evento (data, local, descrição);
+
+:Usuário seleciona opção "Marcar Presença";
+
+if (Evento suporta check-in por localização?) then (sim)
+    :Sistema solicita acesso à localização do dispositivo;
+    if (Localização permitida?) then (sim)
+
+        repeat
+            :Sistema verifica se usuário está no local do evento;
+        repeat while (Usuário ainda não está no local do evento)
+
+        :Sistema registra presença;
+        :Sistema notifica usuário sobre confirmação de presença;
+        :Sistema atualiza lista de participantes presentes para organizador;
+        stop
+
+    else (não)
+        :Sistema exibe erro "Permissão de localização negada";
+        stop
+    endif
+else (não)
+
+    repeat
+        :Usuário faz check-in manual (código QR, código do evento);
+        :Sistema valida código de check-in;
+        if (Código válido?) then (sim)
+            break
+            else (não)
+                :Sistema exibe erro "Código inválido";
+            endif
+        repeat while (Código inválido)
+
+        :Sistema registra presença;
+        :Sistema notifica usuário sobre confirmação de presença;
+        :Sistema atualiza lista de participantes presentes;
+        stop
+
+    endif
+
+    @enduml
