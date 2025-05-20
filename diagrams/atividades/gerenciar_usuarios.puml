@@ -1,27 +1,22 @@
 @startuml
+title Cadastro de Usuário (Administrador)
 skinparam monochrome true
 
 |Administrador|
+start
+
 :Entrar na Plataforma;
-:Autenticar e Autorizar (RBAC);
-:Acessar Painel de Gerenciamento de Usuários;
-:Visualizar Lista de Usuários;
-if (Ação?) then (Adicionar Usuário)
-    :Criar Novo Usuário;
-    :Adicionar Dados (Nome, E-mail);
-    :Selecionar Papel (Administrador, Publicador, Usuário Comum);
-    :Confirmar Criação;
-    :Notificar Usuário;
-else (Editar Usuário)
-    :Selecionar Usuário;
-    :Atualizar Dados ou Papel;
-    :Confirmar Alteração;
-    :Notificar Usuário;
-else (Excluir Usuário)
-    :Selecionar Usuário;
-    :Confirmar Exclusão;
-    :Remover Conta do Usuário;
-    :Notificar Usuário (Opcional);
+:Acessar área de Gerenciamento de Usuários;
+:Clicar em "Novo Usuário";
+:Preencher dados obrigatórios (nome, e-mail, tipo, etc.);
+
+if (Dados válidos?) then (Sim)
+  :Salvar novo usuário;
+  :Notificar usuário por e-mail;
+else (Não)
+  :Exibir mensagem de erro;
+  :Corrigir dados;
 endif
 
+stop
 @enduml

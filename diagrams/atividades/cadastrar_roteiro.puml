@@ -1,43 +1,23 @@
 @startuml
+title Cadastro de Roteiros (Usuário Comum)
 skinparam monochrome true
 
-|Usuário (Administrador, Publicador de Rota Privada ou Guia)|
+|Usuário Comum|
+start
+
 :Entrar na Plataforma;
-:Autenticar e Autorizar;
-:Acessar Formulário de Criação de Roteiro;
-:Selecionar Cidade ou Região (e.g., Tatuí);
-:Definir Itinerário (Pontos a Visitar, Ordem);
-:Definir Datas ou Duração (e.g., Bate-Volta, 2 Dias);
-:Selecionar Acessibilidade (PCD, Pet-Friendly);
-:Selecionar Visibilidade (Público ou Privado);
-if (Campos Preenchidos Corretamente?) then (Sim)
-    if (Rota Privada ou Exclusiva?) then (Sim)
-        :Enviar Roteiro para Aprovação;
-        if (Aprovado?) then (Sim)
-            :Roteiro Publicado;
-            :Notificar Usuário;
-        else (Não)
-            :Receber Feedback;
-            :Editar Detalhes do Roteiro;
-            :Reenviar Roteiro;
-        endif
-    else (Não)
-        :Roteiro Publicado;
-        :Notificar Usuários (Opcional);
-    endif
-else (Não)
-    :Exibir Mensagem de Erro (Campos Obrigatórios);
-    :Corrigir Dados;
-endif
+:Acessar seção "Meus Roteiros";
+:Criar novo roteiro;
+:Selecionar região desejada;
+:Receber recomendações de pontos de interesse;
 
-|Administrador|
-:Revisar Roteiro Enviado;
-if (Válido?) then (Sim)
-    :Aprovar Roteiro;
-    :Notificar Usuário;
-else (Não)
-    :Rejeitar Roteiro;
-    :Fornecer Feedback;
-endif
+repeat
+  :Selecionar ponto de interesse;
+repeat while (Deseja adicionar mais pontos?) is (Sim)
 
+:Definir duração do roteiro;
+
+:Salvar roteiro;
+
+stop
 @enduml
