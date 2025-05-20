@@ -1,0 +1,28 @@
+@startuml
+title Criar e Publicar Rotas de Turismo (Administrador)
+
+start
+
+: Acessa a plataforma;
+: Nomeia a rota de turismo;
+: Define cada trecho e ponto específico da rota;
+
+repeat
+  :Seleciona ponto de interesse da rota;
+repeat while (Deseja adicionar mais pontos de interesse?) is (Sim)
+
+:Define duração da rota: ilimitado ou prazo definido?;
+
+if (Duração da rota é ilimitada?) then (Sim)
+  :Duração Ilimitada;
+else (Não)
+  :Define data e hora de início;
+  :Define data e hora de fim;
+endif
+
+:Salva informações da rota;
+:Publica rota salva;
+
+stop
+
+@enduml

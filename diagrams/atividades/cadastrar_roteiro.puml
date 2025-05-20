@@ -1,0 +1,23 @@
+@startuml
+title Cadastro de Roteiros (Usuário Comum)
+skinparam monochrome true
+
+|Usuário Comum|
+start
+
+:Entrar na Plataforma;
+:Acessar seção "Meus Roteiros";
+:Criar novo roteiro;
+:Selecionar região desejada;
+:Receber recomendações de pontos de interesse;
+
+repeat
+  :Selecionar ponto de interesse;
+repeat while (Deseja adicionar mais pontos?) is (Sim)
+
+:Definir duração do roteiro;
+
+:Salvar roteiro;
+
+stop
+@enduml

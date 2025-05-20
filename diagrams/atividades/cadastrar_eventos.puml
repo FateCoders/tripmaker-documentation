@@ -1,0 +1,39 @@
+@startuml
+title Cadastro de Evento (Diagrama de Atividades)
+skinparam monochrome true
+
+|Usuário (Publicador Privado)|
+start
+:Entrar na Plataforma;
+:Acessar Formulário de Cadastro de Evento;
+:Definir Data e Hora do Evento;
+:Adicionar Detalhes (Nome, Localização, Descrição, Imagens);
+:Selecionar Tipo de Evento (Público ou Privado);
+
+if (Campos obrigatórios preenchidos?) then (Sim)
+  :Enviar Evento para Aprovação;
+else (Não)
+  :Exibir mensagem de erro;
+  :Corrigir dados;
+  stop
+endif
+
+|Administrador|
+:Revisar Evento Enviado;
+if (Evento válido?) then (Sim)
+  :Aprovar Evento;
+  :Publicar Evento;
+  :Notificar Usuário;
+else (Não)
+  :Rejeitar Evento;
+  :Fornecer Feedback;
+endif
+
+|Usuário (Publicador Privado)|
+if (Evento foi rejeitado?) then (Sim)
+  :Editar Detalhes do Evento;
+  :Reenviar Evento;
+endif
+
+stop
+@enduml

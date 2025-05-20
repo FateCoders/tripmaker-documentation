@@ -1,0 +1,40 @@
+@startuml
+title Cadastro de Negócio (Empregador Local e Administrador)
+skinparam monochrome true
+
+|Empregador Local|
+start
+:Entrar na Plataforma;
+:Autenticar e Autorizar;
+:Acessar formulário de cadastro;
+:Selecionar ramo de negócio (Alimentício, Turístico, Hotelaria);
+:Inserir localização (Cidade, Endereço);
+:Adicionar detalhes do negócio (Nome, Descrição, Imagens);
+
+if (Campos obrigatórios preenchidos?) then (Sim)
+  :Enviar negócio para aprovação;
+else (Não)
+  :Exibir mensagem de erro;
+  :Corrigir dados;
+endif
+
+|Administrador|
+:Revisar cadastro do negócio;
+if (Cadastro válido?) then (Sim)
+  :Aprovar negócio;
+  :Publicar negócio na plataforma;
+  :Notificar Empregador;
+else (Não)
+  :Rejeitar negócio;
+  :Fornecer feedback ao Empregador;
+endif
+
+|Empregador Local|
+if (Negócio rejeitado?) then (Sim)
+  :Editar informações do negócio;
+  :Reenviar para aprovação;
+else (Não)
+endif
+
+stop
+@enduml
