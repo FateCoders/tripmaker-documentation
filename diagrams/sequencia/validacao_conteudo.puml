@@ -1,0 +1,16 @@
+@startuml
+actor "Administrador" as Admin
+actor "Publicador Privado" as Pub
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Pub -> S: Enviar conteúdo (evento/ponto turístico privado)
+S -> BD: Armazenar conteúdo pendente
+BD --> S: Conteúdo salvo
+S --> Admin: Notificar conteúdo para validação
+Admin -> S: Aprovar/Rejeitar conteúdo
+S -> BD: Atualizar status do conteúdo
+BD --> S: Status atualizado
+S --> Pub: Notificar resultado da validação
+
+@enduml

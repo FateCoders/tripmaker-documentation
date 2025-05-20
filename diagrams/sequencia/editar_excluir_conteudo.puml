@@ -1,0 +1,18 @@
+@startuml
+actor "Administrador" as Admin
+actor "Publicador Privado" as Pub
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Pub -> S: Enviar conteúdo (evento/ponto turístico)
+S -> BD: Salvar conteúdo
+BD --> S: Conteúdo salvo
+Admin -> S: Solicitar edição/exclusão de conteúdo (idConteudo)
+S -> BD: Verificar permissões do administrador
+BD --> S: Permissões válidas
+S -> BD: Editar/Excluir conteúdo
+BD --> S: Ação concluída
+S --> Admin: Confirmar edição/exclusão
+S --> Pub: Notificar alteração (se editado/excluído)
+
+@enduml

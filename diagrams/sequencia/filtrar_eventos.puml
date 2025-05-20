@@ -1,0 +1,11 @@
+@startuml
+actor "Usuário Comum" as Usuario
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Usuario -> S: Filtrar eventos (cidade, data, acessibilidade)
+S -> BD: Consultar eventos com filtros
+BD --> S: Lista de eventos filtrados
+S --> Usuario: Exibir eventos filtrados
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+actor "Publicador Privado" as Pub
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Pub -> S: Cadastrar evento/ponto turístico privado (detalhes)
+S -> BD: Validar credenciais do publicador
+BD --> S: Credenciais válidas
+S -> BD: Salvar evento/ponto turístico
+BD --> S: Evento/ponto salvo
+S --> Pub: Confirmar cadastro
+
+@enduml

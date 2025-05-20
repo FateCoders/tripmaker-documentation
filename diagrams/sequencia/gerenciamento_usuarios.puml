@@ -1,0 +1,13 @@
+@startuml
+actor "Administrador" as Admin
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Admin -> S: Solicitar gerenciamento de usuário (idUsuario, nivelAcesso)
+S -> BD: Verificar permissões do administrador
+BD --> S: Permissões válidas
+S -> BD: Atualizar nível de acesso do usuário
+BD --> S: Nível de acesso atualizado
+S --> Admin: Confirmar atualização
+
+@enduml

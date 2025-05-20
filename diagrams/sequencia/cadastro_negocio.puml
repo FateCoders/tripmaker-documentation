@@ -1,0 +1,13 @@
+@startuml
+actor "Empregador Local" as Emp
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Emp -> S: Cadastrar negócio (pousada/restaurante, detalhes)
+S -> BD: Validar credenciais do empregador
+BD --> S: Credenciais válidas
+S -> BD: Salvar informações do negócio
+BD --> S: Negócio salvo
+S --> Emp: Confirmar cadastro do negócio
+
+@enduml

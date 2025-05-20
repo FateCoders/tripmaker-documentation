@@ -1,0 +1,13 @@
+@startuml
+actor "Usuário Comum" as Usuario
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Usuario -> S: Favoritar evento (idEvento)
+S -> BD: Verificar autenticidade do usuário
+BD --> S: Usuário autenticado
+S -> BD: Salvar evento como favorito (idUsuario, idEvento)
+BD --> S: Favorito salvo
+S --> Usuario: Confirmar ação de favoritar
+
+@enduml

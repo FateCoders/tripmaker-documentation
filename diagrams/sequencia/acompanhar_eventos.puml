@@ -1,0 +1,11 @@
+@startuml
+actor "Morador da Região" as Morador
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Morador -> S: Acessar lista/calendário de eventos (cidade)
+S -> BD: Consultar eventos culturais por cidade
+BD --> S: Lista de eventos disponíveis
+S --> Morador: Exibir eventos com detalhes
+
+@enduml
