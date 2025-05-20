@@ -1,9 +1,11 @@
 @startuml
 start
 
+title Inscrever-se em Eventos (Usuário Comum)
+
 :Usuário navega para seção de eventos;
 :Usuário aplica filtros (cidade, data, tipo de evento);
-:Sistema exibe lista de eventos disponíveis;
+:Sistema exibe lista de eventosd disponíveis;
 :Usuário seleciona um evento;
 :Sistema exibe detalhes do evento (data, local, descrição);
 

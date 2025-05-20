@@ -1,5 +1,6 @@
 @startuml
 start
+title Inscrever-se em Rotas de Turismo (Usuário Comum)
 
 :Usuário navega para seção de rotas;
 :Usuário aplica filtros (cidade, data, acessibilidade);
