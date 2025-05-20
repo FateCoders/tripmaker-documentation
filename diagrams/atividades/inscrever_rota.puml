@@ -1,0 +1,30 @@
+@startuml
+start
+
+:Usuário navega para seção de rotas;
+:Usuário aplica filtros (cidade, data, acessibilidade);
+:Sistema exibe lista de rotas disponíveis;
+:Usuário seleciona uma rota;
+:Sistema exibe detalhes da rota;
+
+if (Rota requer pagamento?) then (sim)
+    :Usuário é redirecionado para página de pagamento;
+
+    repeat
+        :Usuário realiza pagamento;
+        :Sistema valida pagamento;
+        if (Pagamento confirmado?) then (sim)
+            break
+        else (não)
+            :Sistema exibe erro de pagamento;
+            :Usuário tenta pagamento novamente;
+        endif
+    repeat while (Pagamento não confirmado)
+endif
+
+:Sistema registra inscrição;
+:Sistema envia confirmação por e-mail/notificação;
+:Usuário visualiza confirmação;
+stop
+
+@enduml
