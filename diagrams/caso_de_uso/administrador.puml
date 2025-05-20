@@ -1,0 +1,24 @@
+@startuml administrador
+left to right direction
+
+actor "Administrador" as Administrador
+
+Administrador --> (Entrar no sistema)
+
+Administrador --> (Sair do sistema)
+
+Administrador --> (Alterar credenciais de acesso)
+
+Administrador --> (Gerenciar rotas de turismo)
+
+Administrador --> (Gerenciar conteúdos de Empreendedores e Guias)
+
+Administrador --> (Gerenciar conteúdos cadastrados)
+
+Administrador --> (Gerenciar usuários e níveis de acesso)
+
+Administrador --> (Gerenciar segmentação e informações por cidade)
+
+Administrador --> (Gerenciar microrregiões)
+
+@enduml

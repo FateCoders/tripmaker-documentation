@@ -1,0 +1,27 @@
+@startuml usuario_comum
+left to right direction
+
+actor "Usuário Comum" as Usuário_Comum_
+
+
+Usuário_Comum_ --> (Entrar no sistema)
+
+Usuário_Comum_ --> (Sair do sistema)
+
+Usuário_Comum_ --> (Alterar credenciais de acesso)
+
+Usuário_Comum_ --> (Filtrar rotas e eventos)
+
+Usuário_Comum_ --> (Gerenciar roteiros salvos)
+
+Usuário_Comum_ --> (Inscrever-se em rotas de turismo)
+
+Usuário_Comum_ --> (Visualizar detalhes de rotas)
+
+Usuário_Comum_ --> (Explorar roteiros rápidos)
+
+Usuário_Comum_ --> (Compartilhar roteiros e experiências)
+
+Usuário_Comum_ --> (Classificar roteiros e destinos)
+
+@enduml

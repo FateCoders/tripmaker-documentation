@@ -1,0 +1,12 @@
+@startuml empreendedor_local
+left to right direction
+
+actor "Empreendedor Local" as Empreendedor_Local
+
+Empreendedor_Local --> (Divulgar seus produtos ou serviços)
+
+Empreendedor_Local --> (Atualizar informações de seus produtos ou serviços)
+
+Empreendedor_Local --> (Cadastrar rotas de turismo)
+
+@enduml

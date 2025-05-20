@@ -1,0 +1,21 @@
+@startuml organizador_eventos
+left to right direction
+
+actor "Organizador de Eventos" as Organizador_Eventos
+
+Organizador_Eventos --> (Entrar no sistema)
+
+Organizador_Eventos --> (Sair do sistema)
+
+Organizador_Eventos --> (Alterar credenciais de acesso)
+
+Organizador_Eventos --> (Gerenciar evento)
+
+Organizador_Eventos --> (Acompanhar inscrições)
+
+Organizador_Eventos --> (Confirmar presença dos participantes)
+
+Organizador_Eventos --> (Gerar relatórios de participação)
+
+
+@enduml

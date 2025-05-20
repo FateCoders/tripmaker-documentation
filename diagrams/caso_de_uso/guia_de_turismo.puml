@@ -1,0 +1,16 @@
+@startuml guia_de_turismo
+left to right direction
+
+actor "Guia de Turismo (Credenciado)" as Guia_de_Turismo_Credenciado
+
+Guia_de_Turismo_Credenciado --> (Entrar no sistema)
+
+Guia_de_Turismo_Credenciado --> (Sair do sistema)
+
+Guia_de_Turismo_Credenciado --> (Alterar credenciais de acesso)
+
+Guia_de_Turismo_Credenciado --> (Criar rota de turismo)
+
+Guia_de_Turismo_Credenciado --> (Gerenciar rotas de turismo)
+
+@enduml
