@@ -1,0 +1,13 @@
+@startuml
+actor "Guia de Turismo" as Guia
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Guia -> S: Criar rota guiada exclusiva (detalhesRota)
+S -> BD: Validar credenciais do guia
+BD --> S: Credenciais válidas
+S -> BD: Salvar nova rota
+BD --> S: Rota salva
+S --> Guia: Confirmar criação da rota
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+actor "Publicador de Rota Privada" as Pub
+participant "Sistema" as S
+participant "Banco de Dados" as BD
+
+Pub -> S: Criar rota privada (detalhesRota)
+S -> BD: Validar credenciais do publicador
+BD --> S: Credenciais válidas
+S -> BD: Salvar nova rota privada
+BD --> S: Rota privada salva
+S --> Pub: Confirmar criação da rota privada
+
+@enduml
