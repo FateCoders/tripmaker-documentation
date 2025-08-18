@@ -1,0 +1,51 @@
+% Classe do documento
+\documentclass[
+    12pt,
+    openright,
+    twoside,
+    a4paper,
+    english,
+    french,
+    spanish,
+    brazil
+]{abntex2}
+
+\input{config}
+
+\begin{document}
+
+\selectlanguage{brazil}
+% \frenchspacing
+
+% ELEMENTOS PRÉ-TEXTUAIS
+\imprimircapa
+\imprimirfolhaderosto*
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ELEMENTOS TEXTUAIS
+\textual
+
+\include{content/introduction}
+
+
+
+% \include{abntex2-modelo-include-comandos}
+
+% \phantompart
+
+\include{content/conclusion}
+
+% ELEMENTOS PÓS-TEXTUAIS
+\postextual
+
+% \nocite{}
+
+\bibliography{references}
+
+\phantompart
+\printindex
+
+\end{document}

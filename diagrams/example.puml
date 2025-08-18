@@ -1,8 +1,0 @@
-@startuml
-actor Cliente
-actor Admin
-usecase "Realizar Pedido" as RP
-usecase "Gerenciar Produtos" as GP
-Cliente --> RP
-Admin --> GP
-@enduml
